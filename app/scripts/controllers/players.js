@@ -8,7 +8,7 @@
  * Controller of the ratingClient
  */
 angular.module('ratingClient')
-  .controller('PlayersCtrl', function ($scope, Player) {
+  .controller('PlayersCtrl', function($scope, Player) {
     $scope.model = {
         players: Player.query()
     };

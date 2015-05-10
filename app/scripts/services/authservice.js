@@ -21,6 +21,7 @@ angular.module('ratingClient')
             .success(function(data) {
                 $window.sessionStorage.token = data.token;
                 self.user = window.jwt_decode(data.token);
+                console.log(self.user);
                 self.isLoggedIn = true;
             })
             .error(function(data, status) {

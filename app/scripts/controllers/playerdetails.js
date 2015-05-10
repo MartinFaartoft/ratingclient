@@ -8,7 +8,7 @@
  * Controller of the ratingClient
  */
 angular.module('ratingClient')
-  .controller('PlayerdetailsCtrl', function ($scope, $http, $routeParams, Player) {
+  .controller('PlayerdetailsCtrl', function($scope, $routeParams, Player) {
     $scope.model = {
         player: Player.get({id: $routeParams.playerId})
     };

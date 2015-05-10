@@ -8,7 +8,7 @@
  * Controller of the ratingclientApp
  */
 angular.module('ratingClient')
-  .controller('IndexCtrl', function($http, $scope, $route, $routeParams, authService, baseUrl) {
+  .controller('IndexCtrl', function($scope, $route, $routeParams, authService) {
     $scope.auth = authService;
 
     $scope.login = function() {
@@ -18,13 +18,5 @@ angular.module('ratingClient')
 
     $scope.logout = function() {
         authService.logout();
-    };
-
-    $scope.createPlayer = function() {
-        var url = baseUrl + '/players/';
-        $http.post(url, {name: 'SomeName'})
-            .success(function() {
-                window.alert('We are logged in!');
-            });
     };
   });

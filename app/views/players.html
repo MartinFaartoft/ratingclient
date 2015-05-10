@@ -1,3 +1,18 @@
-<div ng-repeat="p in model.players">
-    <a href="#/players/{{p.id}}">{{p.name}}</a>
-</div>
+<table class="table table-striped">
+    <thead>
+        <th>Name</th>
+        <th>EMA #</th>
+        <th>Mahjong DK Member</th>
+        <th>Nationality</th>
+        <th>Hidden</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="p in model.players">
+            <td><a href="#/players/{{p.id}}">{{p.name}}</a></td>
+            <td>03000001</td>
+            <td>Yes</td>
+            <td>Danish</td>
+            <td>No</td>
+        </tr>
+    </tbody>
+</table>
