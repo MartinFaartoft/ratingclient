@@ -8,14 +8,8 @@
  * Controller of the ratingClient
  */
 angular.module('ratingClient')
-  .controller('PlayersCtrl', function ($scope, $http, baseUrl) {
+  .controller('PlayersCtrl', function ($scope, Player) {
     $scope.model = {
-        players: []
+        players: Player.query()
     };
-
-    var url = baseUrl + '/players/';
-    $http.get(url)
-        .success(function(data) {
-            $scope.model.players = data;
-        });
   });

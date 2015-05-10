@@ -16,7 +16,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function($routeProvider, $httpProvider) {
+  .config(function($routeProvider, $httpProvider, $resourceProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -39,6 +39,9 @@ angular
       });
 
     $httpProvider.interceptors.push('authInterceptor');
+
+    // Don't strip trailing slashes from calculated URLs
+    $resourceProvider.defaults.stripTrailingSlashes = false;
   })
   //constants
   .constant('baseUrl', 'https://ratinglist.herokuapp.com');

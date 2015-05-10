@@ -8,14 +8,12 @@
  * Controller of the ratingClient
  */
 angular.module('ratingClient')
-  .controller('PlayerdetailsCtrl', function ($scope, $http, baseUrl, $routeParams) {
+  .controller('PlayerdetailsCtrl', function ($scope, $http, $routeParams, Player) {
     $scope.model = {
-        player: {}
+        player: Player.get({id: $routeParams.playerId})
     };
 
-    var url = baseUrl + '/players/' + $routeParams.playerId + '/';
-    $http.get(url)
-        .success(function(data) {
-            $scope.model.player = data;
-        });
+    $scope.save = function() {
+        $scope.model.player.$update();
+    };
   });
