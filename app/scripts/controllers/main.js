@@ -7,11 +7,7 @@
  * # MainCtrl
  * Controller of the ratingclientApp
  */
-angular.module('ratingclientApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('ratingClient')
+  .controller('MainCtrl', function() {
+    //frontpage content here
   });
