@@ -24,6 +24,14 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+    //grunt-gh-pages
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
+    },
+
     // Project settings
     yeoman: appConfig,
 
@@ -473,5 +481,12 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'newer:jshint',
+    'test',
+    'build',
+    'gh-pages'
   ]);
 };
