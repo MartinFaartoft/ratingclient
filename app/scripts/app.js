@@ -32,7 +32,11 @@ angular
       })
       .when('/players/:playerId', {
         templateUrl: 'views/playerdetails.html',
-        controller: 'PlayerdetailsCtrl'
+        controller: 'PlayerDetailsCtrl'
+      })
+      .when('/creategame', {
+        templateUrl: 'views/creategame.html',
+        controller: 'CreateGameCtrl'
       })
       .otherwise({
         redirectTo: '/'

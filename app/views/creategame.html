@@ -1,0 +1,11 @@
+<p>This is the createGame view.</p>
+Game type: <input ng-model="model.game.game_type" placeholder="mcr or riichi"></input><br>
+Number of winds: <input ng-model="model.game.number_of_winds" placeholder="1-4"></input><br>
+Date: <input ng-model="model.date" placeholder="format: YYYY-MM-DD"></input><br>
+Finished time: <input ng-model="model.finished_time" placeholder="format: HH:MM"></input><br>
+
+<div ng-repeat="gp in model.game.game_players">
+    Player id <input ng-model="gp.player"></input> Score <input ng-model="gp.score"></input>
+</div>
+
+<button ng-click="save()">Create</button>
