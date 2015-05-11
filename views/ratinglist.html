@@ -1,1 +1,1 @@
-<h1>{{gameType}} rating</h1> <div ng-repeat="row in model.ratingList">[{{row.position}}] <a href="#/players/{{gameType}}/{{row.player_id}}/">{{row.name}}</a>: {{row.rating | number : 2}}</div>
+<h1>{{::gameType}} rating</h1> <table class="table table-striped"> <thead> <th>Position <th>Name <th>Rating  <tbody> <tr ng-repeat="row in model.ratingList"> <td>{{::row.position}} <td><a href="#/players/{{gameType}}/{{row.player_id}}/">{{::row.name}}</a> <td class="text-right">{{::row.rating | number: 2}}   </table>
