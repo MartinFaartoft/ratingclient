@@ -1,0 +1,18 @@
+<h1>Games</h1>
+<a href="#/creategame" ng-show="auth.isLoggedIn"><i class="glyphicon glyphicon-plus"></i> Create Game</a>
+<table class="table table-striped">
+    <thead>
+        <th>Date</th>
+        <th>Players</th>
+        <th ng-show="auth.isLoggedIn">Delete</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="g in model.games">
+            <td><a href="#/games/{{g.id}}">{{g.finished_time}}</a></td>
+            <td>
+                <span ng-repeat="gp in g.game_players" style="border: 1px solid black; padding: 2px; margin:5px;">{{gp.player.name}}: {{gp.score}}</span>
+            </td>
+            <th ng-show="auth.isLoggedIn"><button ng-click="delete(g)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></th>
+        </tr>
+    </tbody>
+</table>

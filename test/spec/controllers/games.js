@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: CreateGameCtrl', function () {
+describe('Controller: GamesCtrl', function () {
 
   // load the controller's module
   beforeEach(module('ratingClient'));
 
-  var CreategameCtrl,
+  var GamesCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    CreategameCtrl = $controller('CreateGameCtrl', {
+    GamesCtrl = $controller('GamesCtrl', {
       $scope: scope
     });
   }));
 
-  // it('should attach a list of awesomeThings to the scope', function () {
-  //   expect(scope.awesomeThings.length).toBe(3);
-  // });
+  it('should attach a list of awesomeThings to the scope', function () {
+    expect(scope.awesomeThings.length).toBe(3);
+  });
 });

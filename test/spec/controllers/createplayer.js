@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: CreateGameCtrl', function () {
+describe('Controller: CreatePlayerCtrl', function () {
 
   // load the controller's module
   beforeEach(module('ratingClient'));
 
-  var CreategameCtrl,
+  var CreateplayerCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    CreategameCtrl = $controller('CreateGameCtrl', {
+    CreateplayerCtrl = $controller('CreatePlayerCtrl', {
       $scope: scope
     });
   }));

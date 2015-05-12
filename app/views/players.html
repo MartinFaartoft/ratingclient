@@ -1,3 +1,5 @@
+<h1>Players</h1>
+<a href="#/createplayer" ng-show="auth.isLoggedIn"><i class="glyphicon glyphicon-plus"></i> Create Player</a>
 <table class="table table-striped">
     <thead>
         <th>Name</th>
@@ -5,7 +7,7 @@
         <th>Mahjong DK Member</th>
         <th>Nationality</th>
         <th>Hidden</th>
-        <th ng-show="isLoggedIn()">Delete</th>
+        <th ng-show="auth.isLoggedIn">Delete</th>
     </thead>
     <tbody>
         <tr ng-repeat="p in model.players">
@@ -14,7 +16,7 @@
             <td>Yes</td>
             <td>Danish</td>
             <td>No</td>
-            <th ng-show="isLoggedIn()"><a ng-click="delete(p)">x</a></th>
+            <th ng-show="auth.isLoggedIn"><button ng-click="delete(p)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></th>
         </tr>
     </tbody>
 </table>

@@ -39,6 +39,14 @@ angular
         templateUrl: 'views/creategame.html',
         controller: 'CreateGameCtrl'
       })
+      .when('/createplayer', {
+        templateUrl: 'views/createplayer.html',
+        controller: 'CreatePlayerCtrl'
+      })
+      .when('/games', {
+        templateUrl: 'views/games.html',
+        controller: 'GamesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -49,5 +57,5 @@ angular
     $resourceProvider.defaults.stripTrailingSlashes = false;
   })
   //constants
-  //.constant('baseUrl', 'https://ratinglist.herokuapp.com');
-  .constant('baseUrl', 'http://lvh.me:8000');
+  .constant('baseUrl', 'https://ratinglist.herokuapp.com');
+  //.constant('baseUrl', 'http://lvh.me:8000');

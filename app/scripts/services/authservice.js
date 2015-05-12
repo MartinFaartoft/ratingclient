@@ -29,9 +29,7 @@ angular.module('ratingClient')
             });
     };
 
-    $rootScope.isLoggedIn = function() {
-      return isLoggedIn;
-    };
+    $rootScope.auth = this;
 
     var logout = function() {
         window.sessionStorage.removeItem('token');
