@@ -8,7 +8,7 @@
  * Controller of the ratingClient
  */
 angular.module('ratingClient')
-  .controller('PlayersCtrl', function($scope, Player) {
+  .controller('PlayersCtrl', function($scope, Player, $window) {
     $scope.model = {
         players: Player.query()
     };
@@ -21,8 +21,8 @@ angular.module('ratingClient')
         };
 
         var error = function(err) {
-            alert(err.data.detail);
-        }
+            $window.alert(err.data.detail);
+        };
 
         player.$delete(null, success, error);
     };

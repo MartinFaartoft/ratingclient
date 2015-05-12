@@ -5,7 +5,7 @@ Date: <input ng-model="model.date" placeholder="format: YYYY-MM-DD"></input><br>
 Finished time: <input ng-model="model.finished_time" placeholder="format: HH:MM"></input><br>
 
 <div ng-repeat="gp in model.game.game_players">
-    Player id <input ng-model="gp.player"></input> Score <input ng-model="gp.score"></input>
+    Player id <input ng-model="gp.player_name" typeahead="player.name for player in model.players | filter:$viewValue | limitTo:8" typeahead-on-select="gp.player = $item.id"></input> Score <input ng-model="gp.score"></input>
 </div>
 
 <button ng-click="save()">Create</button>

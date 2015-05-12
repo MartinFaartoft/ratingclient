@@ -8,10 +8,11 @@
  * Controller of the ratingClient
  */
 angular.module('ratingClient')
-  .controller('CreateGameCtrl', function($scope, Game) {
+  .controller('CreateGameCtrl', function($scope, Game, Player) {
     /*jshint camelcase: false */
     $scope.model = { 
-        game: new Game()
+        game: new Game(),
+        players: Player.query()
     };
 
     $scope.model.game.game_players = [{order: 1}, {order: 2}, {order: 3}, {order: 4}];
