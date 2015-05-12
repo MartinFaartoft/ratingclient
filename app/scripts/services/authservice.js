@@ -8,7 +8,7 @@
  * Factory in the ratingClient.
  */
 angular.module('ratingClient')
-  .factory('authService', function ($http, baseUrl, $window) {
+  .factory('authService', function ($http, baseUrl, $window, $rootScope) {
     /*jshint camelcase: false */
     var isLoggedIn = Boolean(window.sessionStorage.token);
 
@@ -27,6 +27,10 @@ angular.module('ratingClient')
             .error(function(data, status) {
                 $window.alert(status);
             });
+    };
+
+    $rootScope.isLoggedIn = function() {
+      return isLoggedIn;
     };
 
     var logout = function() {

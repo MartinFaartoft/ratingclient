@@ -5,6 +5,7 @@
         <th>Mahjong DK Member</th>
         <th>Nationality</th>
         <th>Hidden</th>
+        <th ng-show="isLoggedIn()">Delete</th>
     </thead>
     <tbody>
         <tr ng-repeat="p in model.players">
@@ -13,6 +14,7 @@
             <td>Yes</td>
             <td>Danish</td>
             <td>No</td>
+            <th ng-show="isLoggedIn()"><a ng-click="delete(p)">x</a></th>
         </tr>
     </tbody>
 </table>

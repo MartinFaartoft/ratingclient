@@ -12,4 +12,18 @@ angular.module('ratingClient')
     $scope.model = {
         players: Player.query()
     };
+
+    $scope.delete = function(player) {
+        var index = $scope.model.players.indexOf(player);
+        
+        var success = function() {
+            $scope.model.players.splice(index, 1);
+        };
+
+        var error = function(err) {
+            alert(err.data.detail);
+        }
+
+        player.$delete(null, success, error);
+    };
   });

@@ -48,4 +48,5 @@ angular
     $resourceProvider.defaults.stripTrailingSlashes = false;
   })
   //constants
-  .constant('baseUrl', 'https://ratinglist.herokuapp.com');
+  //.constant('baseUrl', 'https://ratinglist.herokuapp.com');
+  .constant('baseUrl', 'http://lvh.me:8000');
