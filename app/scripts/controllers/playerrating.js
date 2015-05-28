@@ -10,6 +10,7 @@ angular.module('ratingClient')
 
     $http.get(baseUrl + '/players/' + $routeParams.playerId + '/rating/' + $routeParams.gameType + '/')
         .success(function(response) {
+            console.log(response);
             $scope.model.ratingEntries = response;
         });
 

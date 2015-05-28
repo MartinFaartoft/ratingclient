@@ -2,11 +2,21 @@
 <table class="table table-striped">
     <thead>
         <th>Date</th>
-        <th>Rating</th>
+        <th>Difficulty</th>
+        <th>Expected score</th>
+        <th>Score</th>
+        <th>Score sum</th>
+        <th>Rating diff.</th>
+        <th>New Rating</th>
     </thead>
     <tbody>
         <tr ng-repeat="r in model.ratingEntries">
             <td>{{::r.finished_time | date : 'd/MM/yyyy - HH:mm' }}</td>
+            <td>{{::r.difficulty | number : 2}}</td>
+            <td>{{::r.expected_score | number : 2}}</td>
+            <td>{{::r.score}}</td>
+            <td>{{::r.score_sum}}</td>
+            <td>{{::r.rating_delta | number : 2}}</td>
             <td>{{::r.rating | number : 2}}</td>
         </tr>
     </tbody>
