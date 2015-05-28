@@ -15,7 +15,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'chart.js',
   ])
   .config(function($routeProvider, $httpProvider, $resourceProvider) {
     $routeProvider
@@ -64,6 +65,28 @@ angular
     // Don't strip trailing slashes from calculated URLs
     $resourceProvider.defaults.stripTrailingSlashes = false;
   })
+  
+    //configure chart.js
+  .config(function(ChartJsProvider) {
+    // Configure all charts
+    ChartJsProvider.setOptions({
+      colours: ['#FF5252', '#FF8A80'],
+      animation: false,
+      showTooltips: false,
+      //scaleShowLabels: false
+
+    });
+    // Configure all line charts
+    ChartJsProvider.setOptions('Line', {
+      bezierCurve: false,
+      scaleShowVerticalLines: false,
+      pointDot: false,
+      datasetFill: false,
+    });
+  })
+
+
   //constants
   //.constant('baseUrl', 'https://ratinglist.herokuapp.com');
   .constant('baseUrl', 'http://lvh.me:8000');
+

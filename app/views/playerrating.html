@@ -1,4 +1,9 @@
 <h1>{{::model.gameType}} rating for {{::model.player.name}}</h1>
+
+<canvas id="line" class="chart chart-line" data="data"
+  labels="labels" series="series">
+</canvas> 
+
 <table class="table table-striped">
     <thead>
         <th>Date</th>
