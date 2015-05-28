@@ -39,6 +39,10 @@ angular
         templateUrl: 'views/creategame.html',
         controller: 'CreateGameCtrl'
       })
+      .when('/editgame/:gameId', {
+        templateUrl: 'views/editgame.html',
+        controller: 'EditGameCtrl'
+      })
       .when('/createplayer', {
         templateUrl: 'views/createplayer.html',
         controller: 'CreatePlayerCtrl'
