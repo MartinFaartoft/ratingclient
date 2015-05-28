@@ -1,0 +1,13 @@
+<h1>{{::model.gameType}} rating for {{::model.player.name}}</h1>
+<table class="table table-striped">
+    <thead>
+        <th>Date</th>
+        <th>Rating</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="r in model.ratingEntries">
+            <td>{{::r.finished_time | date : 'd/MM/yyyy - HH:mm' }}</td>
+            <td>{{::r.rating | number : 2}}</td>
+        </tr>
+    </tbody>
+</table>

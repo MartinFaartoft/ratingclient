@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/ratinglist.html',
         controller: 'RatinglistCtrl'
       })
+      .when('/players/:playerId/rating/:gameType', {
+        templateUrl: 'views/playerrating.html',
+        controller: 'PlayerRatingCtrl'
+      })
       .when('/players', {
         templateUrl: 'views/players.html',
         controller: 'PlayersCtrl'

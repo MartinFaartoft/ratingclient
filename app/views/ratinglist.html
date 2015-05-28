@@ -9,7 +9,7 @@
     <tbody>
         <tr ng-repeat="row in model.ratingList">
             <td>{{::row.position}}</td>
-            <td><a href="#/players/{{gameType}}/{{row.player_id}}/">{{::row.name}}</a></td>
+            <td><a href="#/players/{{row.player_id}}/rating/{{gameType}}/">{{::row.name}}</a></td>
             <td class="text-right">{{::row.rating | number: 2}}</td>
         </tr>
     </tbody>

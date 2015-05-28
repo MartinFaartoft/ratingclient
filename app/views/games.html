@@ -4,15 +4,17 @@
     <thead>
         <th>Date</th>
         <th>Players</th>
+        <th ng-show="auth.isLoggedIn">Edit</th>
         <th ng-show="auth.isLoggedIn">Delete</th>
     </thead>
     <tbody>
         <tr ng-repeat="g in model.games">
-            <td><a href="#/games/{{g.id}}">{{g.finished_time}}</a></td>
+            <td>{{g.finished_time | date : 'd/MM/yyyy - HH:mm' }}</td>
             <td>
                 <span ng-repeat="gp in g.game_players" style="border: 1px solid black; padding: 2px; margin:5px;">{{gp.player.name}}: {{gp.score}}</span>
             </td>
-            <th ng-show="auth.isLoggedIn"><button ng-click="delete(g)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></th>
+            <th ng-show="auth.isLoggedIn"><a href="#/editgame/{{g.id}}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a></th>
+            <th ng-show="auth.isLoggedIn"><a ng-click="delete(g)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></th>
         </tr>
     </tbody>
 </table>
